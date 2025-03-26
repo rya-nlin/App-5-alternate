@@ -72,6 +72,12 @@
     }
   </script>
   <style>
+      .page {
+    display: none; /* Hide results page initially */
+  }
+  .show {
+    display: block; /* Show results when needed */
+  }
   </style>
   <body>
     <div class="w3-container w3-flat-emerald">
@@ -79,7 +85,7 @@
     </div>
     <!-- header at top -->
     <div class="w3-container">
-      <!-- home page where user inputs dna sequence and clicks button to recieve aalysis -->
+      <!-- home page where user inputs dna sequence and clicks button to recieve analysis -->
       <p>Enter your DNA sequence.</p>
       <input type="text" id="sequence" name="sequence">
       <a href="#one" onclick ="analyze(); return false;"class= "w3-btn w3-black">Analyze</a>
@@ -87,10 +93,10 @@
     <div class="page" id="one">
       <!-- next page displays results-->
         <div class="w3-container w3-flat-emerald">
-          <h1>Results</h1>
+            <h1>Results</h1>
         </div>
         <div class = "w3-container">
-          <p id="results"></p>
+            <p id="results"></p>
         </div>
     </div>
   </body>
