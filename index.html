@@ -59,10 +59,10 @@
         alert("No valid DNA bases found.");
         return;
       }
-      var aPct = (numA/(numC+numG+numT))*100;
-      var cPct = (numC/(numA+numG+numT))*100;
-      var tPct = (numT/(numA+numC+numG))*100;
-      var gPct = (numG/(numA+numC+numT))*100;
+      var aPct = (numA/(totalBases))*100;
+      var cPct = (numC/(totalBases))*100;
+      var tPct = (numT/(totalBases))*100;
+      var gPct = (numG/(totalBases))*100;
       //finding percentages of bases
       var text = "There are " + numA + `A bases (${aPct} %). There are ` + numC+ `C bases (${cPct} %). There are ${numG} G bases (${gPct} %). There are ${numT} T bases (${tPct} %).` + `A-T percentage = ${aPct+tPct}. C-T percentage = ${cPct+gPct}.`;
       //text to be displayed on results page
