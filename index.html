@@ -9,7 +9,55 @@
   </head>
   <script>
     function analyze(){
-      const seq = document.getElementById("sequence");
+      const seq = document.getElementById("sequence").value;
+      let sentence = seq;
+      var numA=0;
+      var i = 0;
+      while(i>=0){
+        i=sentence.search('A');
+        if(i!=-1){
+          numA++;
+        }
+        sentence = sentence.slice(i+1);
+      }
+      let seq1 = seq;
+      var numC =0;
+      var j=0;
+      while(j>=0){
+        j=sentence.search('C');
+        if(j!=-1){
+          numC++;
+        }
+        seq1 = seq1.slice(j+1);
+      }
+      let seq2 = seq;
+      var numG=0;
+      var k=0;
+      while(k>=0){
+        k=sentence.search('G');
+        if(k!=-1){
+          numG++;
+        }
+        seq2=seq2.slice(k+1);
+      }
+      let seq3 = seq;
+      var numT=0;
+      var l=0;
+      while(l>=0){
+        k=seq3.search('T');
+        if(k!=-1){
+          numT++;
+        }
+        seq3=seq3.slice(k+1);
+      }
+      var aPct = (numA/(numC+numG+numT))*100;
+      var cPct = (numC/(numA+numG+numT))*100;
+      var tPct = (numT/(numA+numC+numG))*100;
+      var gPct = (numG/(numA+numC+numT))*100;
+      var text = "There are " + numA + `A bases (${aPct} %). There are ` + numC+ `C bases (${cPct} %). There are ${numG} G bases (${gPct} %). There are ${numT} T bases (${tPct} %).` + `A-T percentage = ${aPct+tPct}. C-T percentage = ${cPct+gPct}.`;
+      var par = document.getElementById("results");
+      par.innerHTML = text;
+    }
   </script>
   <style>
   </style>
@@ -25,6 +73,12 @@
       <a href="#one" class= "w3-btn w3-black">Analyze</a>
     </div>
     <div class="page" id="one">
+        <div class="w3-container w3-flat-emerald">
+          <h>Results</h>
+        </div>
+        <div class = "w3-container">
+          <p id="results"></p>
+        </div>
     </div>
   </body>
 </html>
