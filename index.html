@@ -36,7 +36,7 @@
       var numG=0;
       var k=0;
       while(k>=0){
-        k=sentence.search('G');
+        k=seq2.search('G');
         if(k!=-1){
           numG++;
         }
@@ -51,9 +51,13 @@
         if(l!=-1){
           numT++;
         }
-        seq3=seq3.slice(k+1);
+        seq3=seq3.slice(l+1);
       }
       //count num of Ts
+            if (totalBases === 0) {
+        alert("No valid DNA bases found.");
+        return;
+      }
       var aPct = (numA/(numC+numG+numT))*100;
       var cPct = (numC/(numA+numG+numT))*100;
       var tPct = (numT/(numA+numC+numG))*100;
@@ -77,7 +81,7 @@
       <!-- home page where user inputs dna sequence and clicks button to recieve aalysis -->
       <p>Enter your DNA sequence.</p>
       <input type="text" id="sequence" name="sequence">
-      <a href="#one" onclick ="analyze();"class= "w3-btn w3-black">Analyze</a>
+      <a href="#one" onclick ="analyze(); return false;"class= "w3-btn w3-black">Analyze</a>
     </div>
     <div class="page" id="one">
       <!-- next page displays results-->
