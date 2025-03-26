@@ -20,6 +20,7 @@
         }
         sentence = sentence.slice(i+1);
       }
+      //while loop counts number of A bases
       let seq1 = seq;
       var numC =0;
       var j=0;
@@ -30,6 +31,7 @@
         }
         seq1 = seq1.slice(j+1);
       }
+      //counting num of Cs
       let seq2 = seq;
       var numG=0;
       var k=0;
@@ -40,6 +42,7 @@
         }
         seq2=seq2.slice(k+1);
       }
+      //count num of Gs
       let seq3 = seq;
       var numT=0;
       var l=0;
@@ -50,13 +53,17 @@
         }
         seq3=seq3.slice(k+1);
       }
+      //count num of Ts
       var aPct = (numA/(numC+numG+numT))*100;
       var cPct = (numC/(numA+numG+numT))*100;
       var tPct = (numT/(numA+numC+numG))*100;
       var gPct = (numG/(numA+numC+numT))*100;
+      //finding percentages of bases
       var text = "There are " + numA + `A bases (${aPct} %). There are ` + numC+ `C bases (${cPct} %). There are ${numG} G bases (${gPct} %). There are ${numT} T bases (${tPct} %).` + `A-T percentage = ${aPct+tPct}. C-T percentage = ${cPct+gPct}.`;
+      //text to be displayed on results page
       var par = document.getElementById("results");
       par.innerHTML = text;
+      //putting final text on HTML page
     }
   </script>
   <style>
@@ -73,6 +80,7 @@
       <a href="#one" class= "w3-btn w3-black">Analyze</a>
     </div>
     <div class="page" id="one">
+      <!-- next page displays results-->
         <div class="w3-container w3-flat-emerald">
           <h1>Results</h1>
         </div>
