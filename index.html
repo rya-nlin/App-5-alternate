@@ -64,7 +64,7 @@
       var tPct = (numT/(totalBases))*100;
       var gPct = (numG/(totalBases))*100;
       //finding percentages of bases
-      var text = "There are " + numA + `A bases (${aPct} %). There are ` + numC+ `C bases (${cPct} %). There are ${numG} G bases (${gPct} %). There are ${numT} T bases (${tPct} %).` + `A-T percentage = ${aPct+tPct}. C-G percentage = ${cPct+gPct}.`;
+      var text = "There are " + numA + ` A bases (${aPct} %). There are ` + numC+ ` C bases (${cPct} %). There are ${numG} G bases (${gPct} %). There are ${numT} T bases (${tPct} %).` + ` A-T percentage = ${aPct+tPct}. C-G percentage = ${cPct+gPct}.`;
       //text to be displayed on results page
       var par = document.getElementById("results");
       par.innerHTML = text;
